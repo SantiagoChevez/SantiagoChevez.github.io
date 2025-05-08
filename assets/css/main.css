@@ -16,7 +16,75 @@ Mis estílos
   margin: 0 auto; /* Centra el texto 
   backdrop-filter: blur(5px); /* Efecto de difuminado 
 }
-*/
+  */
+
+/* Estilo mejorado para la sección "Sobre mí" */
+#about {
+  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+  padding: 3em 2em; /* Espaciado interno */
+  background-color: #242629; /* Fondo oscuro para integrarse con el diseño */
+  color: #ffffff; /* Texto blanco para contraste */
+  margin: 0 auto 4em auto; /* Espaciado inferior */
+  text-align: center; /* Centra el contenido */
+  border-top: 2px solid #34a58e; /* Línea superior para destacar */
+  border-bottom: 2px solid #34a58e; /* Línea inferior para destacar */
+}
+
+#about h2 {
+  font-size: 2.5em; /* Tamaño más grande para el título */
+  margin-bottom: 1em;
+  color: #34a58e; /* Color destacado para el título */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 0.1em; /* Espaciado entre letras */
+}
+
+#about p {
+  font-size: 1.2em; /* Tamaño de fuente más grande */
+  line-height: 1.8; /* Espaciado entre líneas */
+  text-align: justify; /* Justifica el texto */
+  margin-bottom: 2em; /* Espaciado inferior */
+}
+
+#about ul {
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px; /* Limita el ancho de la lista */
+}
+
+#about ul li {
+  margin-bottom: 0.8em; /* Espaciado entre elementos de la lista */
+  font-size: 1.1em; /* Tamaño de fuente */
+}
+
+#about ul li strong {
+  color: #34a58e; /* Resalta los títulos de los elementos */
+}
+
+#about img {
+  width: 150px; /* Tamaño de la imagen */
+  height: 150px; /* Asegura que sea un círculo perfecto */
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+  border: 3px solid #34a58e; /* Borde con color destacado */
+  margin: 1em auto; /* Centra la imagen y agrega espaciado */
+  display: block; /* Centra la imagen en su contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+#projects-title {
+  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+  text-align: center; /* Centra el texto */
+  background-color: #242629; /* Fondo oscuro para destacar */
+  color: #ffffff; /* Texto blanco */
+  font-size: 2.5em; /* Tamaño del texto */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 0.1em; /* Espaciado entre letras */
+}
+
+
+
+
 /*
 	Multiverse by HTML5 UP
 	html5up.net | @ajlkn
@@ -254,6 +322,14 @@ body {
   html,
   body {
     min-width: 320px;
+  }
+  #about {
+    padding: 1.5em;
+    font-size: 0.9em;
+  }
+
+  article.thumb {
+    width: 100%; /* Los thumbs ocupan todo el ancho */
   }
 }
 
@@ -1672,27 +1748,17 @@ body {
 }
 
 #header {
-  -moz-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  -moz-transition: -moz-transform 1s ease;
-  -webkit-transition: -webkit-transform 1s ease;
-  -ms-transition: -ms-transform 1s ease;
-  transition: transform 1s ease;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  background: #1f2224;
-  bottom: -1em;
-  height: 5em;
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0; /* Asegura que esté en la parte superior */
   left: 0;
-  line-height: 4em;
-  padding: 0 1.5em;
-  position: fixed;
-  user-select: none;
-  width: 100%;
-  z-index: 10002;
+  width: 100%; /* Ocupa todo el ancho */
+  background: #1f2224; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  z-index: 10002; /* Asegura que esté por encima de otros elementos */
+  height: 5em; /* Altura del header */
+  line-height: 5em; /* Centra verticalmente el texto */
+  padding: 0 1.5em; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
 }
 
 body.is-preload #header {
@@ -1703,66 +1769,49 @@ body.is-preload #header {
 }
 
 #header h1 {
-  color: #a0a0a1;
-  display: inline-block;
-  font-size: 1em;
-  line-height: 1;
+  font-size: 1.5em; /* Tamaño del texto del título */
   margin: 0;
-  vertical-align: middle;
+  display: inline-block;
+  color: #a0a0a1;
 }
 
-#header h1 a {
-  border: 0;
-  color: inherit;
+#header nav {
+  position: absolute;
+  right: 1.5em; /* Alinea el menú a la derecha */
+  top: 50%;
+  transform: translateY(-50%); /* Centra verticalmente el menú */
 }
 
 #header h1 a:hover {
   color: inherit !important;
 }
 
-#header nav {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-#header nav > ul {
+#header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex; /* Alinea los elementos del menú horizontalmente */
 }
 
-#header nav > ul > li {
-  display: inline-block;
-  padding: 0;
+#header nav ul li a {
+  margin-right: 1.5em; /* Espaciado entre los enlaces */
+  color: #ffffff; /* Asegura que el texto sea blanco */
+  text-decoration: none; /* Elimina el subrayado */
+  font-weight: bold; /* Hace el texto más destacado */
 }
 
-#header nav > ul > li a {
-  -moz-transition: background-color 0.5s ease;
-  -webkit-transition: background-color 0.5s ease;
-  -ms-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease;
-  border: 0;
-  color: #ffffff;
-  display: inline-block;
-  letter-spacing: 0.1em;
-  padding: 0 1.65em;
-  text-transform: uppercase;
+#header nav ul li a:last-child {
+  margin-right: 0; /* Elimina el margen del último enlace */
 }
 
-#header nav > ul > li a.icon:before {
-  color: #505051;
-  float: right;
-  margin-left: 0.75em;
+#header nav ul li a:hover {
+  color: #34a58e; /* Cambia el color al pasar el mouse */
 }
 
-#header nav > ul > li a:hover {
-  color: #ffffff !important;
+body {
+  padding-top: 5em; /* Ajusta el contenido para que no quede debajo del header */
 }
 
-#header nav > ul > li a.active {
-  background-color: #242629;
-}
 
 @media screen and (max-width: 736px) {
   body {
@@ -1830,6 +1879,21 @@ body.is-preload #header {
   overflow: hidden;
   position: relative;
 }
+
+/* Efecto hover para los thumbs */
+#main .thumb:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Agrega una sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para la imagen dentro del thumb */
+#main .thumb:hover > .image {
+  opacity: 0.8; /* Reduce ligeramente la opacidad */
+  transition: opacity 0.3s ease; /* Transición suave */
+}
+
+
 
 #main .thumb:after {
   background-image: -moz-linear-gradient(
