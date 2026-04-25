@@ -22,18 +22,18 @@ Mis estílos
 #about {
   width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
   padding: 3em 2em; /* Espaciado interno */
-  background-color: #242629; /* Fondo oscuro para integrarse con el diseño */
+  background-color: #242425; /* Fondo oscuro para integrarse con el diseño */
   color: #ffffff; /* Texto blanco para contraste */
   margin: 0 auto 4em auto; /* Espaciado inferior */
   text-align: center; /* Centra el contenido */
-  border-top: 2px solid #34a58e; /* Línea superior para destacar */
-  border-bottom: 2px solid #34a58e; /* Línea inferior para destacar */
+  border-top: 2px solid #a53434; /* Línea superior para destacar */
+  border-bottom: 2px solid #a53434; /* Línea inferior para destacar */
 }
 
 #about h2 {
   font-size: 2.5em; /* Tamaño más grande para el título */
   margin-bottom: 1em;
-  color: #34a58e; /* Color destacado para el título */
+  color: #a53434; /* Color destacado para el título */
   text-transform: uppercase; /* Texto en mayúsculas */
   letter-spacing: 0.1em; /* Espaciado entre letras */
 }
@@ -58,7 +58,7 @@ Mis estílos
 }
 
 #about ul li strong {
-  color: #34a58e; /* Resalta los títulos de los elementos */
+  color: #a53434; /* Resalta los títulos de los elementos */
 }
 
 #about img {
@@ -66,7 +66,7 @@ Mis estílos
   height: 150px; /* Asegura que sea un círculo perfecto */
   border-radius: 50%; /* Hace la imagen circular */
   object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
-  border: 3px solid #34a58e; /* Borde con color destacado */
+  border: 3px solid #a53434; /* Borde con color destacado */
   margin: 1em auto; /* Centra la imagen y agrega espaciado */
   display: block; /* Centra la imagen en su contenedor */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
@@ -1805,7 +1805,7 @@ body.is-preload #header {
 }
 
 #header nav ul li a:hover {
-  color: #34a58e; /* Cambia el color al pasar el mouse */
+  color: #a53434; /* Cambia el color al pasar el mouse */
 }
 
 body {
