@@ -5,133 +5,351 @@ const { lang = 'en' } = Astro.props;
 const content = {
   en: {
     title: "Featured Projects",
-    subtitle: "Engineering solutions across AI, Robotics, and Software Development.",
+    subtitle: "Engineering solutions across AI, Robotics, and Software Development. Click any project for technical details.",
+    viewProject: "Click to view details",
+    closeModal: "Close",
+    githubBtn: "Repository",
+    demoBtn: "Live Demo / Video",
     projects: [
       {
+        id: "rover-urc",
         title: "Quantum Robotics - Rover URC",
         description: "Software architecture and control systems developed for the rover that competed as a finalist in the University Rover Challenge.",
+        details: "Developed and managed software and control systems for the exploration rover using Ubuntu and ROS2. The project focused on rover programming, system integration, and supporting autonomous and manual robot operations.",
+        highlights: [
+          "Finalist in the international University Rover Challenge",
+          "Top 10 worldwide placement",
+          "Software development and system integration in a multidisciplinary robotics team"
+        ],
         tags: ["ROS2", "Python", "C++", "Autonomous Navigation"],
-        github: "https://github.com/QuantumRoboticsURC"
+        image: "/images/projects/Quantum2.jpeg",
+        github: "https://github.com/SantiagoChevez",
+        demo: ""
       },
       {
+        id: "nlp",
+        title: "Anorexia Detection from Tweets",
+        description: "Machine learning project focused on classifying tweets to identify whether they contain indicators of anorexia.",
+        details: "Experimented with different machine learning models and text representations to determine which approaches were most effective for classifying tweets based on indicators associated with anorexia.",
+        highlights: [
+          "Compared different machine learning models",
+          "Evaluated multiple text representation techniques",
+          "Classified tweets based on indicators of anorexia"
+        ],
+        tags: ["Python", "NLP", "Machine Learning", "Text Classification"],
+        image: "/images/projects/NLP.png",
+        github: "https://github.com/A01749675/NLP_OCTAVO",
+        demo: ""
+      },
+      {
+        id: "keyspotting",
         title: "KeySpotting",
         description: "Platform for trend analysis and business decision-making through information gathering, trend analysis, and AI-powered recommendations.",
+        details: "Developed a platform focused on collecting information from the internet, analyzing trends, and generating recommendations with the support of artificial intelligence.",
+        highlights: [
+          "Information gathering from the internet",
+          "Trend analysis for business decision-making",
+          "AI-powered recommendations"
+        ],
         tags: ["TypeScript", "React", "Python", "AI"],
-        github: "https://github.com/KeySpotting/KeySpotting"
+        image: "/images/projects/KeySpotting.png",
+        github: "",
+        demo: ""
       },
       {
+        id: "chatbot",
         title: "Customer Management Chatbot",
         description: "Customer service chatbot integrated into a website using WordPress extensions and a connection with ChatGPT.",
+        details: "Developed a chatbot for customer service on the Gonzalez Chevez y Cia. S.C. website, integrating WordPress extensions with ChatGPT to provide automated assistance to website visitors.",
+        highlights: [
+          "ChatGPT integration into a website",
+          "Automated customer service interactions",
+          "WordPress-based implementation"
+        ],
         tags: ["WordPress", "ChatGPT", "AI"],
-        github: ""
+        image: "/images/projects/ChatbotGC.png",
+        github: "",
+        demo: "https://www.gonzalezchevez.com/"
       },
       {
+        id: "multi-agent",
         title: "Multi-Agent System",
         description: "City simulation with autonomous agents developed in Python and a graphical representation in Unity to calculate and visualize agent movement.",
+        details: "Developed a multi-agent system using Mesa in Python to create and manage agents within a simulated city. Unity was used for the graphical representation and to calculate the agents' movement.",
+        highlights: [
+          "Multi-agent simulation developed in Python",
+          "Graphical city representation using Unity",
+          "Agent movement and behavior simulation"
+        ],
         tags: ["Python", "Mesa", "Unity", "C#"],
-        github: "https://github.com/A01749675/SMA-Equipo5-GC"
+        image: "/images/projects/SMA.png",
+        github: "https://github.com/A01749675/SMA-Equipo5-GC",
+        demo: "https://youtu.be/3SDj74o_Fc4"
       },
       {
+        id: "zazil",
         title: "Zazil App",
         description: "Mobile application for selling products from the Todas Brillamos Foundation, developed with Android Studio and integrated with Oracle APEX and PayPal.",
-        tags: ["Android Studio", "Java", "Oracle APEX", "PayPal"],
-        github: "https://github.com/A01750658/TodasBrillamos"
+        details: "Developed a mobile application for the sale of products from the Todas Brillamos Foundation. The project used Android Studio for the mobile application and Oracle APEX and PayPal for backend and payment functionality.",
+        highlights: [
+          "Android mobile application development",
+          "Oracle APEX integration",
+          "PayPal payment integration"
+        ],
+        tags: ["Android Studio", "Oracle APEX", "PayPal", "Java"],
+        image: "/images/projects/Zazil.png",
+        github: "https://github.com/A01750658/TodasBrillamos",
+        demo: ""
       },
       {
+        id: "verqor",
         title: "Verqor's Farming Tycoon",
         description: "Educational video game focused on financial literacy for people involved in agriculture, developed in Unity and deployed as a web application.",
+        details: "Developed an educational financial game for people involved in agriculture. The game was developed in Unity using C# and integrated with a web page built with HTML, JavaScript, and CSS.",
+        highlights: [
+          "Educational game focused on financial literacy",
+          "Unity and C# game development",
+          "Web integration using HTML, JavaScript, and CSS"
+        ],
         tags: ["Unity", "C#", "HTML", "JavaScript", "CSS"],
-        github: "https://github.com/A01749675/VerqorsFarmingTycoonS"
+        image: "/images/projects/Verqor's.png",
+        github: "https://github.com/A01749675/VerqorsFarmingTycoonS",
+        demo: "https://youtu.be/IrFVeFTs_D4"
       },
       {
+        id: "lucky-9",
         title: "Rover Lucky 9 - Quantum Robotics",
         description: "Space exploration rover developed for the University Rover Challenge, capable of collecting samples, recognizing objects, and manipulating different objects.",
+        details: "Developed as part of Quantum Robotics for the University Rover Challenge. The rover was designed to perform exploration tasks including sample collection, object recognition, and object manipulation.",
+        highlights: [
+          "Space exploration rover for the University Rover Challenge",
+          "Sample collection capabilities",
+          "Object recognition and manipulation"
+        ],
         tags: ["ROS2", "Python", "C++", "Robotics"],
-        github: "https://github.com/QuantumRoboticsURC"
+        image: "/images/projects/Quantum1.jpeg",
+        github: "",
+        demo: "https://www.youtube.com/watch?v=pdUXojjzZ0E&ab_channel=QuantumRobotics"
       },
       {
+        id: "bus-can-drive-2",
         title: "Bus_Can_Drive 2 - Quantum Robotics",
-        description: "ROS 2 package developed in C++ to control the motors of the Lucky 9 Rover and adapt to the system's evolving requirements.",
+        description: "ROS 2 package developed in C++ to control the motors of the Lucky 9 Rover.",
+        details: "Developed a ROS 2 package in C++ responsible for controlling the motors of the Lucky 9 Rover. The package has been adapted over time to meet the evolving requirements of the robot and improve its operation.",
+        highlights: [
+          "ROS 2 motor control package",
+          "C++ implementation",
+          "Adapted to the evolving requirements of the rover"
+        ],
         tags: ["ROS2", "C++", "CAN Bus", "Robotics"],
-        github: "https://github.com/QuantumRoboticsURC/bus_can_drive2"
+        image: "/images/projects/Quantum3.jpeg",
+        github: "https://github.com/QuantumRoboticsURC/bus_can_drive2",
+        demo: ""
       },
       {
+        id: "simple-drive-2",
         title: "Simple Drive 2 - Quantum Robotics",
         description: "ROS 2 package developed in Python that receives console commands and publishes velocity commands to control the movement of the Lucky 9 Rover.",
+        details: "Developed a ROS 2 package in Python that subscribes to console control commands and publishes velocity commands for the movement of the Lucky 9 Rover.",
+        highlights: [
+          "ROS 2 package developed in Python",
+          "Console-based rover control",
+          "Velocity command publishing"
+        ],
         tags: ["ROS2", "Python", "Robotics", "Control Systems"],
-        github: "https://github.com/QuantumRoboticsURC/simple_drive2"
+        image: "/images/projects/Quantum5.jpeg",
+        github: "https://github.com/QuantumRoboticsURC/simple_drive2",
+        demo: ""
       },
       {
+        id: "web-interface",
         title: "Web Interface - Quantum Robotics",
         description: "Web interface for controlling systems of the Lucky 9 Rover, including the robotic arm, with a Python-based backend.",
-        tags: ["HTML", "CSS", "JavaScript", "Python", "ROS2"],
-        github: "https://github.com/QuantumRoboticsURC/Web_Interface"
+        details: "Developed a web interface for manipulating several systems of the Lucky 9 Rover. The interface includes control of the robotic arm and performs the necessary calculations to move it to the desired position.",
+        highlights: [
+          "Web interface for rover system control",
+          "Robotic arm manipulation",
+          "Python backend with HTML, CSS, and JavaScript frontend"
+        ],
+        tags: ["HTML", "CSS", "JavaScript", "Python"],
+        image: "/images/projects/Quantum2.jpeg",
+        github: "https://github.com/QuantumRoboticsURC/Web_Interface",
+        demo: ""
       }
     ]
   },
   es: {
     title: "Proyectos Destacados",
-    subtitle: "Soluciones de ingeniería en IA, Robótica y Desarrollo de Software.",
+    subtitle: "Soluciones de ingeniería en IA, Robótica y Desarrollo de Software. Haz clic en cualquier proyecto para ver detalles.",
+    viewProject: "Clic para ver detalles",
+    closeModal: "Cerrar",
+    githubBtn: "Repositorio",
+    demoBtn: "Demo en Vivo / Video",
     projects: [
       {
+        id: "rover-urc",
         title: "Quantum Robotics - Rover URC",
-        description: "Arquitectura de software y sistemas de control desarrollados para el rover finalista de la University Rover Challenge.",
+        description: "Arquitectura de software y sistemas de control desarrollados para el rover que compitió como finalista en la University Rover Challenge.",
+        details: "Desarrollé y gestioné sistemas de software y control para el rover de exploración utilizando Ubuntu y ROS2. El proyecto se enfocó en la programación del rover, integración de sistemas y soporte para operaciones autónomas y manuales.",
+        highlights: [
+          "Finalista en la University Rover Challenge internacional",
+          "Posición dentro del Top 10 mundial",
+          "Desarrollo de software e integración de sistemas en un equipo multidisciplinario de robótica"
+        ],
         tags: ["ROS2", "Python", "C++", "Navegación Autónoma"],
-        github: "https://github.com/QuantumRoboticsURC"
+        image: "/images/projects/Quantum2.jpeg",
+        github: "https://github.com/SantiagoChevez",
+        demo: ""
       },
       {
+        id: "nlp",
+        title: "Detección de Anorexia en Tweets",
+        description: "Proyecto de aprendizaje automático enfocado en clasificar tweets para identificar si contienen indicios de anorexia.",
+        details: "Experimenté con diferentes modelos de aprendizaje automático y representaciones de texto para determinar qué enfoques eran más efectivos para clasificar tweets con base en indicadores asociados con la anorexia.",
+        highlights: [
+          "Comparación de diferentes modelos de aprendizaje automático",
+          "Evaluación de múltiples técnicas de representación de texto",
+          "Clasificación de tweets con base en indicadores de anorexia"
+        ],
+        tags: ["Python", "NLP", "Machine Learning", "Clasificación de Texto"],
+        image: "/images/projects/NLP.png",
+        github: "https://github.com/A01749675/NLP_OCTAVO",
+        demo: ""
+      },
+      {
+        id: "keyspotting",
         title: "KeySpotting",
-        description: "Plataforma para el análisis de tendencias y apoyo en la toma de decisiones empresariales mediante la recopilación de información y análisis con IA.",
+        description: "Plataforma para el análisis de tendencias y la toma de decisiones empresariales mediante recopilación de información, análisis de tendencias y recomendaciones impulsadas por IA.",
+        details: "Desarrollé una plataforma enfocada en recopilar información de internet, analizar tendencias y generar recomendaciones con apoyo de inteligencia artificial.",
+        highlights: [
+          "Recopilación de información de internet",
+          "Análisis de tendencias para la toma de decisiones empresariales",
+          "Recomendaciones impulsadas por inteligencia artificial"
+        ],
         tags: ["TypeScript", "React", "Python", "IA"],
-        github: "https://github.com/KeySpotting/KeySpotting"
+        image: "/images/projects/KeySpotting.png",
+        github: "",
+        demo: ""
       },
       {
-        title: "Chatbot para Gestión de Clientes",
-        description: "Chatbot para atención al cliente integrado en un sitio web mediante WordPress y conexión con ChatGPT.",
+        id: "chatbot",
+        title: "Chatbot de Gestión de Clientes",
+        description: "Chatbot de atención al cliente integrado en un sitio web mediante extensiones de WordPress y conexión con ChatGPT.",
+        details: "Desarrollé un chatbot para atención al cliente en el sitio web de Gonzalez Chevez y Cia. S.C., integrando extensiones de WordPress con ChatGPT para proporcionar asistencia automatizada a los visitantes.",
+        highlights: [
+          "Integración de ChatGPT en un sitio web",
+          "Automatización de interacciones de atención al cliente",
+          "Implementación basada en WordPress"
+        ],
         tags: ["WordPress", "ChatGPT", "IA"],
-        github: ""
+        image: "/images/projects/ChatbotGC.png",
+        github: "",
+        demo: "https://www.gonzalezchevez.com/"
       },
       {
-        title: "Sistema Multiagentes",
-        description: "Simulación de una ciudad con agentes autónomos desarrollados en Python y una representación gráfica en Unity para calcular y visualizar su movimiento.",
+        id: "multi-agent",
+        title: "Sistema Multi-Agente",
+        description: "Simulación de una ciudad con agentes autónomos desarrollada en Python y una representación gráfica en Unity para calcular y visualizar el movimiento de los agentes.",
+        details: "Desarrollé un sistema multi-agente utilizando Mesa en Python para crear y gestionar agentes dentro de una ciudad simulada. Unity se utilizó para la representación gráfica y para calcular el movimiento de los agentes.",
+        highlights: [
+          "Simulación multi-agente desarrollada en Python",
+          "Representación gráfica de una ciudad utilizando Unity",
+          "Simulación del movimiento y comportamiento de agentes"
+        ],
         tags: ["Python", "Mesa", "Unity", "C#"],
-        github: "https://github.com/A01749675/SMA-Equipo5-GC"
+        image: "/images/projects/SMA.png",
+        github: "https://github.com/A01749675/SMA-Equipo5-GC",
+        demo: "https://youtu.be/3SDj74o_Fc4"
       },
       {
-        title: "Zazil App",
-        description: "Aplicación móvil para la venta de productos de la fundación Todas Brillamos, desarrollada con Android Studio e integrada con Oracle APEX y PayPal.",
-        tags: ["Android Studio", "Java", "Oracle APEX", "PayPal"],
-        github: "https://github.com/A01750658/TodasBrillamos"
+        id: "zazil",
+        title: "Aplicación Zazil",
+        description: "Aplicación móvil para la venta de productos de la Fundación Todas Brillamos, desarrollada con Android Studio e integrada con Oracle APEX y PayPal.",
+        details: "Desarrollé una aplicación móvil para la venta de productos de la Fundación Todas Brillamos. El proyecto utilizó Android Studio para la aplicación móvil y Oracle APEX y PayPal para la funcionalidad de backend y pagos.",
+        highlights: [
+          "Desarrollo de una aplicación móvil para Android",
+          "Integración con Oracle APEX",
+          "Integración de pagos mediante PayPal"
+        ],
+        tags: ["Android Studio", "Oracle APEX", "PayPal", "Java"],
+        image: "/images/projects/Zazil.png",
+        github: "https://github.com/A01750658/TodasBrillamos",
+        demo: ""
       },
       {
+        id: "verqor",
         title: "Verqor's Farming Tycoon",
-        description: "Videojuego educativo enfocado en educación financiera para personas involucradas en el campo, desarrollado en Unity y publicado en una página web.",
+        description: "Videojuego educativo enfocado en educación financiera para personas involucradas en la agricultura, desarrollado en Unity y desplegado como una aplicación web.",
+        details: "Desarrollé un videojuego educativo de finanzas dirigido a personas involucradas en la agricultura. El juego fue desarrollado en Unity utilizando C# e integrado con una página web construida con HTML, JavaScript y CSS.",
+        highlights: [
+          "Videojuego educativo enfocado en educación financiera",
+          "Desarrollo de videojuegos con Unity y C#",
+          "Integración web utilizando HTML, JavaScript y CSS"
+        ],
         tags: ["Unity", "C#", "HTML", "JavaScript", "CSS"],
-        github: "https://github.com/A01749675/VerqorsFarmingTycoonS"
+        image: "/images/projects/Verqor's.png",
+        github: "https://github.com/A01749675/VerqorsFarmingTycoonS",
+        demo: "https://youtu.be/IrFVeFTs_D4"
       },
       {
+        id: "lucky-9",
         title: "Rover Lucky 9 - Quantum Robotics",
-        description: "Robot de exploración espacial desarrollado para la University Rover Challenge, capaz de recolectar muestras, reconocer objetos y manipular diferentes elementos.",
+        description: "Rover de exploración espacial desarrollado para la University Rover Challenge, capaz de recolectar muestras, reconocer objetos y manipular diferentes elementos.",
+        details: "Desarrollado como parte de Quantum Robotics para la University Rover Challenge. El rover fue diseñado para realizar tareas de exploración, incluyendo recolección de muestras, reconocimiento de objetos y manipulación de diferentes elementos.",
+        highlights: [
+          "Rover de exploración espacial para la University Rover Challenge",
+          "Capacidad de recolección de muestras",
+          "Reconocimiento y manipulación de objetos"
+        ],
         tags: ["ROS2", "Python", "C++", "Robótica"],
-        github: "https://github.com/QuantumRoboticsURC"
+        image: "/images/projects/Quantum1.jpeg",
+        github: "",
+        demo: "https://www.youtube.com/watch?v=pdUXojjzZ0E&ab_channel=QuantumRobotics"
       },
       {
+        id: "bus-can-drive-2",
         title: "Bus_Can_Drive 2 - Quantum Robotics",
-        description: "Paquete de ROS 2 desarrollado en C++ para controlar los motores del Rover Lucky 9 y adaptarse a las necesidades del sistema.",
+        description: "Paquete de ROS 2 desarrollado en C++ para controlar los motores del Rover Lucky 9.",
+        details: "Desarrollé un paquete de ROS 2 en C++ encargado de controlar los motores del Rover Lucky 9. El paquete se ha adaptado con el tiempo para cumplir con los requerimientos cambiantes del robot y mejorar su funcionamiento.",
+        highlights: [
+          "Paquete de ROS 2 para el control de motores",
+          "Implementación en C++",
+          "Adaptación a los requerimientos cambiantes del rover"
+        ],
         tags: ["ROS2", "C++", "CAN Bus", "Robótica"],
-        github: "https://github.com/QuantumRoboticsURC/bus_can_drive2"
+        image: "/images/projects/Quantum3.jpeg",
+        github: "https://github.com/QuantumRoboticsURC/bus_can_drive2",
+        demo: ""
       },
       {
+        id: "simple-drive-2",
         title: "Simple Drive 2 - Quantum Robotics",
-        description: "Paquete de ROS 2 desarrollado en Python que recibe comandos de consola y publica velocidades para controlar el movimiento del Rover Lucky 9.",
-        tags: ["ROS2", "Python", "Robótica", "Control"],
-        github: "https://github.com/QuantumRoboticsURC/simple_drive2"
+        description: "Paquete de ROS 2 desarrollado en Python que recibe comandos desde la consola y publica comandos de velocidad para controlar el movimiento del Rover Lucky 9.",
+        details: "Desarrollé un paquete de ROS 2 en Python que recibe comandos de control desde la consola y publica comandos de velocidad para controlar el movimiento del Rover Lucky 9.",
+        highlights: [
+          "Paquete de ROS 2 desarrollado en Python",
+          "Control del rover mediante comandos de consola",
+          "Publicación de comandos de velocidad"
+        ],
+        tags: ["ROS2", "Python", "Robótica", "Sistemas de Control"],
+        image: "/images/projects/Quantum5.jpeg",
+        github: "https://github.com/QuantumRoboticsURC/simple_drive2",
+        demo: ""
       },
       {
-        title: "Web Interface - Quantum Robotics",
-        description: "Interfaz web para manipular sistemas del Rover Lucky 9, incluyendo el brazo robótico, con un backend desarrollado en Python.",
-        tags: ["HTML", "CSS", "JavaScript", "Python", "ROS2"],
-        github: "https://github.com/QuantumRoboticsURC/Web_Interface"
+        id: "web-interface",
+        title: "Interfaz Web - Quantum Robotics",
+        description: "Interfaz web para controlar diferentes sistemas del Rover Lucky 9, incluyendo el brazo robótico, con un backend desarrollado en Python.",
+        details: "Desarrollé una interfaz web para manipular diferentes sistemas del Rover Lucky 9. La interfaz incluye el control del brazo robótico y realiza los cálculos necesarios para moverlo a la posición deseada.",
+        highlights: [
+          "Interfaz web para el control de sistemas del rover",
+          "Control y manipulación del brazo robótico",
+          "Backend en Python con frontend en HTML, CSS y JavaScript"
+        ],
+        tags: ["HTML", "CSS", "JavaScript", "Python"],
+        image: "/images/projects/Quantum2.jpeg",
+        github: "https://github.com/QuantumRoboticsURC/Web_Interface",
+        demo: ""
       }
     ]
   }
@@ -140,39 +358,183 @@ const content = {
 const t = content[lang] || content.en;
 ---
 
-<section id="projects" class="max-w-4xl mx-auto px-6 py-16">
-  <div class="mb-10">
+<section id="projects" class="max-w-6xl mx-auto px-6 py-20 relative">
+  <div class="mb-12">
     <h2 class="text-3xl font-bold text-white tracking-tight mb-2">{t.title}</h2>
     <p class="text-slate-400">{t.subtitle}</p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {t.projects.map((project) => (
-      <div class="group relative bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+  <!-- Contenedor de Tarjetas -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {t.projects.map((project, index) => (
+      <div 
+        data-project-index={index}
+        class="project-card hover-glow bg-slate-900/90 backdrop-blur-sm border border-slate-800 hover:border-blue-500/50 rounded-2xl p-6 flex flex-col justify-between cursor-pointer group transition-all duration-300"
+      >
         <div>
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+          <div class="flex items-start justify-between mb-4 gap-2">
+            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
               {project.title}
             </h3>
-            <a href={project.github} target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub Repository">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
+            <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-2 py-1 rounded border border-blue-500/20 opacity-80 group-hover:opacity-100 transition-opacity shrink-0">
+              🔍 {t.viewProject}
+            </span>
           </div>
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
             {project.description}
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span class="px-2.5 py-1 text-xs font-medium bg-slate-800/80 text-blue-300 rounded-md border border-slate-700/50">
+        <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+          {project.tags.slice(0, 3).map((tag) => (
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-800/80 text-blue-300 rounded-md border border-slate-700/60">
               {tag}
             </span>
           ))}
+          {project.tags.length > 3 && (
+            <span class="px-2 py-1 text-xs text-slate-500">
+              +{project.tags.length - 3}
+            </span>
+          )}
         </div>
       </div>
     ))}
   </div>
+
+  <!-- Modal Flotante de Detalles del Proyecto -->
+  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 text-slate-100 shadow-2xl relative transform scale-95 transition-transform duration-300" id="modal-container">
+      
+      <!-- Botón de Cerrar -->
+      <button id="close-modal" class="absolute top-5 right-5 text-slate-400 hover:text-white bg-slate-800/80 p-2 rounded-full border border-slate-700 transition-colors" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Imagen del Proyecto -->
+      <div class="mb-6 overflow-hidden rounded-xl border border-slate-800 bg-slate-950 max-h-64 flex items-center justify-center">
+        <img id="modal-image" src="" alt="" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Título y Descripción Extendida -->
+      <h3 id="modal-title" class="text-2xl font-bold text-white mb-3"></h3>
+      <p id="modal-details" class="text-slate-300 text-sm md:text-base leading-relaxed mb-6"></p>
+
+      <!-- Logros Clave (Highlights) -->
+      <div class="mb-6">
+        <h4 class="text-xs uppercase tracking-wider text-blue-400 font-semibold mb-3">Highlights & Technical Achievements</h4>
+        <ul id="modal-highlights" class="space-y-2 text-sm text-slate-300 list-disc list-inside"></ul>
+      </div>
+
+      <!-- Etiquetas Técnicas Completa -->
+      <div class="mb-8">
+        <h4 class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Technologies Used</h4>
+        <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <!-- Botones de Acción -->
+      <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-800">
+        <a id="modal-github" href="#" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-sm font-medium border border-slate-700 transition-colors">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          {t.githubBtn}
+        </a>
+        <a id="modal-demo" href="#" target="_blank" class="hidden flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-medium transition-colors">
+          🚀 {t.demoBtn}
+        </a>
+      </div>
+
+    </div>
+  </div>
 </section>
+
+<!-- Script de cliente para manejar la apertura y datos del Modal -->
+<script is:inline define:vars={{ projects: t.projects }}>
+  const modal = document.getElementById('project-modal');
+  const modalContainer = document.getElementById('modal-container');
+  const closeBtn = document.getElementById('close-modal');
+  const cards = document.querySelectorAll('.project-card');
+
+  // Elementos internos del modal
+  const modalImg = document.getElementById('modal-image');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDetails = document.getElementById('modal-details');
+  const modalHighlights = document.getElementById('modal-highlights');
+  const modalTags = document.getElementById('modal-tags');
+  const modalGithub = document.getElementById('modal-github');
+  const modalDemo = document.getElementById('modal-demo');
+
+  function openModal(project) {
+    modalImg.src = project.image;
+    modalImg.alt = project.title;
+    modalTitle.textContent = project.title;
+    modalDetails.textContent = project.details;
+
+    // Poblar highlights
+    modalHighlights.innerHTML = '';
+    project.highlights.forEach(h => {
+      const li = document.createElement('li');
+      li.textContent = h;
+      modalHighlights.appendChild(li);
+    });
+
+    // Poblar tags
+    modalTags.innerHTML = '';
+    project.tags.forEach(tag => {
+      const span = document.createElement('span');
+      span.className = 'px-3 py-1 text-xs font-medium bg-slate-800 text-blue-300 rounded-lg border border-slate-700';
+      span.textContent = tag;
+      modalTags.appendChild(span);
+    });
+
+    // Configurar enlaces
+    modalGithub.href = project.github;
+    if (project.demo) {
+      modalDemo.href = project.demo;
+      modalDemo.classList.remove('hidden');
+    } else {
+      modalDemo.classList.add('hidden');
+    }
+
+    // Mostrar modal con animación
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    modalContainer.classList.remove('scale-95');
+    modalContainer.classList.add('scale-100');
+    document.body.style.overflow = 'hidden'; // Bloquear scroll del fondo
+  }
+
+  function closeModal() {
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    modalContainer.classList.remove('scale-100');
+    modalContainer.classList.add('scale-95');
+    document.body.style.overflow = ''; // Restaurar scroll
+  }
+
+  // Event Listeners
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const index = card.getAttribute('data-project-index');
+      if (projects[index]) {
+        openModal(projects[index]);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  // Cerrar al hacer clic fuera del contenedor blanco/oscuro
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Cerrar con la tecla ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('opacity-0')) {
+      closeModal();
+    }
+  });
+</script>

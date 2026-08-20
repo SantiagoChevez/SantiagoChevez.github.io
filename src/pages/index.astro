@@ -7,16 +7,19 @@ import '../styles/global.css';
 
 <html lang="en" class="scroll-smooth">
   <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <title>Santiago Chevez | Software Engineer</title>
-</head>
-  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-500 selection:text-white min-h-screen pt-16">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Santiago Chevez | Software Engineer</title>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-500 selection:text-white min-h-screen pt-16 relative">
+    <!-- Capa de Patrón Técnico con Desvanecido -->
+    <div class="absolute inset-0 -z-10 bg-tech-grid [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none"></div>
+
     <Navbar lang="en" />
     <main>
-      <Hero />
-      <Projects />
+      <Hero lang="en" />
+      <Projects lang="en" />
     </main>
   </body>
 </html>
