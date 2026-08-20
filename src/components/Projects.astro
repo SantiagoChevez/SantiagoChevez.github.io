@@ -1,0 +1,178 @@
+---
+// src/components/Projects.astro
+const { lang = 'en' } = Astro.props;
+
+const content = {
+  en: {
+    title: "Featured Projects",
+    subtitle: "Engineering solutions across AI, Robotics, and Software Development.",
+    projects: [
+      {
+        title: "Quantum Robotics - Rover URC",
+        description: "Software architecture and control systems developed for the rover that competed as a finalist in the University Rover Challenge.",
+        tags: ["ROS2", "Python", "C++", "Autonomous Navigation"],
+        github: "https://github.com/QuantumRoboticsURC"
+      },
+      {
+        title: "KeySpotting",
+        description: "Platform for trend analysis and business decision-making through information gathering, trend analysis, and AI-powered recommendations.",
+        tags: ["TypeScript", "React", "Python", "AI"],
+        github: "https://github.com/KeySpotting/KeySpotting"
+      },
+      {
+        title: "Customer Management Chatbot",
+        description: "Customer service chatbot integrated into a website using WordPress extensions and a connection with ChatGPT.",
+        tags: ["WordPress", "ChatGPT", "AI"],
+        github: ""
+      },
+      {
+        title: "Multi-Agent System",
+        description: "City simulation with autonomous agents developed in Python and a graphical representation in Unity to calculate and visualize agent movement.",
+        tags: ["Python", "Mesa", "Unity", "C#"],
+        github: "https://github.com/A01749675/SMA-Equipo5-GC"
+      },
+      {
+        title: "Zazil App",
+        description: "Mobile application for selling products from the Todas Brillamos Foundation, developed with Android Studio and integrated with Oracle APEX and PayPal.",
+        tags: ["Android Studio", "Java", "Oracle APEX", "PayPal"],
+        github: "https://github.com/A01750658/TodasBrillamos"
+      },
+      {
+        title: "Verqor's Farming Tycoon",
+        description: "Educational video game focused on financial literacy for people involved in agriculture, developed in Unity and deployed as a web application.",
+        tags: ["Unity", "C#", "HTML", "JavaScript", "CSS"],
+        github: "https://github.com/A01749675/VerqorsFarmingTycoonS"
+      },
+      {
+        title: "Rover Lucky 9 - Quantum Robotics",
+        description: "Space exploration rover developed for the University Rover Challenge, capable of collecting samples, recognizing objects, and manipulating different objects.",
+        tags: ["ROS2", "Python", "C++", "Robotics"],
+        github: "https://github.com/QuantumRoboticsURC"
+      },
+      {
+        title: "Bus_Can_Drive 2 - Quantum Robotics",
+        description: "ROS 2 package developed in C++ to control the motors of the Lucky 9 Rover and adapt to the system's evolving requirements.",
+        tags: ["ROS2", "C++", "CAN Bus", "Robotics"],
+        github: "https://github.com/QuantumRoboticsURC/bus_can_drive2"
+      },
+      {
+        title: "Simple Drive 2 - Quantum Robotics",
+        description: "ROS 2 package developed in Python that receives console commands and publishes velocity commands to control the movement of the Lucky 9 Rover.",
+        tags: ["ROS2", "Python", "Robotics", "Control Systems"],
+        github: "https://github.com/QuantumRoboticsURC/simple_drive2"
+      },
+      {
+        title: "Web Interface - Quantum Robotics",
+        description: "Web interface for controlling systems of the Lucky 9 Rover, including the robotic arm, with a Python-based backend.",
+        tags: ["HTML", "CSS", "JavaScript", "Python", "ROS2"],
+        github: "https://github.com/QuantumRoboticsURC/Web_Interface"
+      }
+    ]
+  },
+  es: {
+    title: "Proyectos Destacados",
+    subtitle: "Soluciones de ingeniería en IA, Robótica y Desarrollo de Software.",
+    projects: [
+      {
+        title: "Quantum Robotics - Rover URC",
+        description: "Arquitectura de software y sistemas de control desarrollados para el rover finalista de la University Rover Challenge.",
+        tags: ["ROS2", "Python", "C++", "Navegación Autónoma"],
+        github: "https://github.com/QuantumRoboticsURC"
+      },
+      {
+        title: "KeySpotting",
+        description: "Plataforma para el análisis de tendencias y apoyo en la toma de decisiones empresariales mediante la recopilación de información y análisis con IA.",
+        tags: ["TypeScript", "React", "Python", "IA"],
+        github: "https://github.com/KeySpotting/KeySpotting"
+      },
+      {
+        title: "Chatbot para Gestión de Clientes",
+        description: "Chatbot para atención al cliente integrado en un sitio web mediante WordPress y conexión con ChatGPT.",
+        tags: ["WordPress", "ChatGPT", "IA"],
+        github: ""
+      },
+      {
+        title: "Sistema Multiagentes",
+        description: "Simulación de una ciudad con agentes autónomos desarrollados en Python y una representación gráfica en Unity para calcular y visualizar su movimiento.",
+        tags: ["Python", "Mesa", "Unity", "C#"],
+        github: "https://github.com/A01749675/SMA-Equipo5-GC"
+      },
+      {
+        title: "Zazil App",
+        description: "Aplicación móvil para la venta de productos de la fundación Todas Brillamos, desarrollada con Android Studio e integrada con Oracle APEX y PayPal.",
+        tags: ["Android Studio", "Java", "Oracle APEX", "PayPal"],
+        github: "https://github.com/A01750658/TodasBrillamos"
+      },
+      {
+        title: "Verqor's Farming Tycoon",
+        description: "Videojuego educativo enfocado en educación financiera para personas involucradas en el campo, desarrollado en Unity y publicado en una página web.",
+        tags: ["Unity", "C#", "HTML", "JavaScript", "CSS"],
+        github: "https://github.com/A01749675/VerqorsFarmingTycoonS"
+      },
+      {
+        title: "Rover Lucky 9 - Quantum Robotics",
+        description: "Robot de exploración espacial desarrollado para la University Rover Challenge, capaz de recolectar muestras, reconocer objetos y manipular diferentes elementos.",
+        tags: ["ROS2", "Python", "C++", "Robótica"],
+        github: "https://github.com/QuantumRoboticsURC"
+      },
+      {
+        title: "Bus_Can_Drive 2 - Quantum Robotics",
+        description: "Paquete de ROS 2 desarrollado en C++ para controlar los motores del Rover Lucky 9 y adaptarse a las necesidades del sistema.",
+        tags: ["ROS2", "C++", "CAN Bus", "Robótica"],
+        github: "https://github.com/QuantumRoboticsURC/bus_can_drive2"
+      },
+      {
+        title: "Simple Drive 2 - Quantum Robotics",
+        description: "Paquete de ROS 2 desarrollado en Python que recibe comandos de consola y publica velocidades para controlar el movimiento del Rover Lucky 9.",
+        tags: ["ROS2", "Python", "Robótica", "Control"],
+        github: "https://github.com/QuantumRoboticsURC/simple_drive2"
+      },
+      {
+        title: "Web Interface - Quantum Robotics",
+        description: "Interfaz web para manipular sistemas del Rover Lucky 9, incluyendo el brazo robótico, con un backend desarrollado en Python.",
+        tags: ["HTML", "CSS", "JavaScript", "Python", "ROS2"],
+        github: "https://github.com/QuantumRoboticsURC/Web_Interface"
+      }
+    ]
+  }
+};
+
+const t = content[lang] || content.en;
+---
+
+<section id="projects" class="max-w-4xl mx-auto px-6 py-16">
+  <div class="mb-10">
+    <h2 class="text-3xl font-bold text-white tracking-tight mb-2">{t.title}</h2>
+    <p class="text-slate-400">{t.subtitle}</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {t.projects.map((project) => (
+      <div class="group relative bg-slate-900/50 border border-slate-800 hover:border-blue-500/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+              {project.title}
+            </h3>
+            <a href={project.github} target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub Repository">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            {project.description}
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-800/80 text-blue-300 rounded-md border border-slate-700/50">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

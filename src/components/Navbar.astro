@@ -1,0 +1,30 @@
+---
+// src/components/Navbar.astro
+const { lang = 'en' } = Astro.props;
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60">
+  <nav class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo / Nombre -->
+    <a href={lang === 'es' ? '/es' : '/'} class="font-bold text-white text-lg tracking-tight hover:text-blue-400 transition-colors">
+      SC<span class="text-blue-500">.</span>
+    </a>
+
+    <div class="flex items-center gap-6 text-sm font-medium">
+      <a href="#projects" class="text-slate-300 hover:text-white transition-colors">
+        {lang === 'es' ? 'Proyectos' : 'Projects'}
+      </a>
+      
+      <!-- Botón Cambio de Idioma -->
+      <a 
+        href={lang === 'en' ? '/es' : '/'} 
+        class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-200 text-xs font-semibold tracking-wide transition-all duration-200 flex items-center gap-1.5 hover:border-blue-500/50"
+      >
+        <svg class="w-3.5 h-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.657-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.657-9 3-9m-9 9a9 9 0 019-9" />
+        </svg>
+        {lang === 'en' ? 'ES' : 'EN'}
+      </a>
+    </div>
+  </nav>
+</header>
